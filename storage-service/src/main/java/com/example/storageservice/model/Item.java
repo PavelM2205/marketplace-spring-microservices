@@ -1,9 +1,6 @@
 package com.example.storageservice.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -21,8 +18,12 @@ public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "item_code")
+    private String itemCode;
+
     private String name;
     private BigDecimal price;
-    private int amount;
-
+    private Integer amount;
+    private String description;
 }

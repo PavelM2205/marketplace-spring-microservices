@@ -1,5 +1,9 @@
 package com.example.storageservice.dto;
 
+import java.math.BigDecimal;
+
 public record ItemCreateEditDto (String name,
-                                 double price) {
+                                 BigDecimal price,
+                                 String description,
+                                 Integer amount) {
 }

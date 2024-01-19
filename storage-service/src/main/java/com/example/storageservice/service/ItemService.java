@@ -75,7 +75,8 @@ public class ItemService {
                 item.getId(),
                 item.getItemCode(),
                 isDecreased,
-                item.getAmount()
+                item.getAmount(),
+                item.getPrice()
         );
     }
 }

@@ -21,12 +21,12 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "order_code")
+    private String orderCode;
+
     @OneToMany(orphanRemoval = true, cascade = CascadeType.ALL)
     @JoinColumn(name = "order_id")
     private List<ItemInfo> items;
-
-    @Column(name = "customer_id")
-    private Long customerId;
 
     private LocalDateTime created;
     private boolean isPaid;

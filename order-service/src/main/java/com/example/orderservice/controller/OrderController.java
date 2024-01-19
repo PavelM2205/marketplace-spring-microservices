@@ -1,6 +1,7 @@
 package com.example.orderservice.controller;
 
 import com.example.orderservice.dto.OrderCreateDto;
+import com.example.orderservice.dto.OrderCreateResponseDto;
 import com.example.orderservice.dto.OrderReadDto;
 import com.example.orderservice.service.OrderService;
 import lombok.RequiredArgsConstructor;
@@ -17,7 +18,7 @@ public class OrderController {
     private final OrderService orderService;
 
     @PostMapping
-    public OrderReadDto create(@RequestBody OrderCreateDto orderDto) {
+    public OrderCreateResponseDto create(@RequestBody OrderCreateDto orderDto) {
         return orderService.create(orderDto);
     }
 

@@ -15,3 +15,5 @@ spring:
         format_sql: true
     hibernate:
       ddl-auto: validate
+
+storage.service.uri: http://localhost:8081

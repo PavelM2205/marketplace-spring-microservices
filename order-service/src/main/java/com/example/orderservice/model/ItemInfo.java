@@ -21,6 +21,8 @@ public class ItemInfo {
     private Long id;
 
     private Long itemId;
+
+    @Column(name = "item_code")
     private String itemCode;
     private Integer count;
     private BigDecimal price;

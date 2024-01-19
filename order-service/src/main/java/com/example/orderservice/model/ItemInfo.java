@@ -21,6 +21,7 @@ public class ItemInfo {
     private Long id;
 
     private Long itemId;
-    private int count;
+    private String itemCode;
+    private Integer count;
     private BigDecimal price;
 }

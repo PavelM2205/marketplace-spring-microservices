@@ -1,6 +1,8 @@
 package com.example.storageservice.controller;
 
 import com.example.storageservice.dto.ItemCreateEditDto;
+import com.example.storageservice.dto.ItemDecreaseAmountRequestDto;
+import com.example.storageservice.dto.ItemDecreaseAmountResponseDto;
 import com.example.storageservice.dto.ItemReadDto;
 import com.example.storageservice.service.ItemService;
 import lombok.RequiredArgsConstructor;
@@ -42,5 +44,10 @@ public class ItemController {
     @DeleteMapping("/{id}")
     public ResponseEntity<?> delete(@PathVariable Long id) {
         return itemService.delete(id) ? ResponseEntity.noContent().build() : ResponseEntity.notFound().build();
+    }
+
+    @PutMapping("/store")
+    public ItemDecreaseAmountResponseDto decreaseAmountForOrder(@RequestBody ItemDecreaseAmountRequestDto requestDto) {
+        return itemService.decreaseAmountForOrderDto(requestDto);
     }
 }

@@ -22,7 +22,7 @@ import java.util.stream.Collectors;
 public class OrderService {
     private final OrderRepository orderRepository;
     private final OrderReadMapper orderReadMapper;
-    private final WebClient webClient;
+    private final WebClient.Builder webClientBuilder;
 
     @Value("${storage.service.uri}")
     private String storageServiceUri;
@@ -31,7 +31,8 @@ public class OrderService {
     public OrderCreateResponseDto create(OrderCreateDto orderDto) {
         Map<String, ItemDecreaseAmountRequestInfoDto> map = getMapForRequest(orderDto);
 
-        ItemDecreaseAmountResponseDto response = webClient.put()
+        ItemDecreaseAmountResponseDto response = webClientBuilder.build()
+                .put()
                 .uri(storageServiceUri + "/items/store")
                 .bodyValue(new ItemDecreaseAmountRequestDto(map))
                 .retrieve()

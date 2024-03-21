@@ -25,5 +25,5 @@ storage.service.uri: http://storage-service
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://eureka:password@localhost:8761/eureka
 

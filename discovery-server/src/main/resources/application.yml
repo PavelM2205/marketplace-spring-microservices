@@ -4,6 +4,8 @@ server:
 eureka:
   instance:
     hostname: localhost
+  username: ${EUREKA_USERNAME:eureka}
+  password: ${EUREKA_PASSWORD:password}
 
   client:
     register-with-eureka: false
